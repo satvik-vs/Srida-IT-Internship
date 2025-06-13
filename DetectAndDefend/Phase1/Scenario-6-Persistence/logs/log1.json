@@ -1,0 +1,98 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "cNy9apcBSSHwno86owFj",
+    "_version": 1,
+    "_score": null,
+    "_source": {
+      "input": {
+        "type": "log"
+      },
+      "cluster": {
+        "node": "wazuh-manager-master-0",
+        "name": "59ua5pzn9gtc"
+      },
+      "agent": {
+        "ip": "192.168.1.101",
+        "name": "SIEM-Target-Windows",
+        "id": "002"
+      },
+      "data": {
+        "win": {
+          "eventdata": {
+            "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "processGuid": "{18240644-59e9-684c-1b01-000000000d00}",
+            "processId": "7520",
+            "targetFilename": "C:\\\\Users\\\\conta\\\\AppData\\\\Roaming\\\\Microsoft\\\\Windows\\\\Start Menu\\\\Programs\\\\Startup\\\\evil.exe",
+            "utcTime": "2025-06-13 19:21:37.826",
+            "creationUtcTime": "2025-06-13 19:21:37.826",
+            "ruleName": "T1023",
+            "user": "DESKTOP-FF0MPJM\\\\conta"
+          },
+          "system": {
+            "eventID": "11",
+            "keywords": "0x8000000000000000",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "level": "4",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "message": "\"File created:\r\nRuleName: T1023\r\nUtcTime: 2025-06-13 19:21:37.826\r\nProcessGuid: {18240644-59e9-684c-1b01-000000000d00}\r\nProcessId: 7520\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetFilename: C:\\Users\\conta\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\evil.exe\r\nCreationUtcTime: 2025-06-13 19:21:37.826\r\nUser: DESKTOP-FF0MPJM\\conta\"",
+            "opcode": "0",
+            "systemTime": "2025-06-13T19:21:37.8370144Z",
+            "version": "2",
+            "threadID": "4912",
+            "eventRecordID": "6651",
+            "computer": "DESKTOP-FF0MPJM",
+            "task": "11",
+            "severityValue": "INFORMATION",
+            "processID": "3288",
+            "providerName": "Microsoft-Windows-Sysmon"
+          }
+        }
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "rule": {
+        "firedtimes": 1,
+        "mail": false,
+        "level": 9,
+        "groups": [
+          "sysmon",
+          "sysmon_eid11_detections",
+          "windows"
+        ],
+        "description": "Powershell process created executable file in AppData temp folder",
+        "mitre": {
+          "technique": [
+            "Ingress Tool Transfer"
+          ],
+          "id": [
+            "T1105"
+          ],
+          "tactic": [
+            "Command and Control"
+          ]
+        },
+        "id": "92204"
+      },
+      "location": "EventChannel",
+      "@index_name": "wazuh-alerts",
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "id": "1749842499.3362",
+      "timestamp": "2025-06-13T19:21:39.352Z"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T19:21:39.352Z"
+      ]
+    },
+    "highlight": {
+      "data.win.system.eventID": [
+        "@opensearch-dashboards-highlighted-field@11@/opensearch-dashboards-highlighted-field@"
+      ]
+    },
+    "sort": [
+      1749842499352
+    ]
+  }

@@ -1,0 +1,104 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "cttFapcBSSHwno86Mv4p",
+    "_version": 1,
+    "_score": null,
+    "_source": {
+      "input": {
+        "type": "log"
+      },
+      "cluster": {
+        "node": "wazuh-manager-master-0",
+        "name": "59ua5pzn9gtc"
+      },
+      "agent": {
+        "ip": "192.168.1.101",
+        "name": "SIEM-Target-Windows",
+        "id": "002"
+      },
+      "data": {
+        "win": {
+          "eventdata": {
+            "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "processGuid": "{18240644-59e9-684c-1b01-000000000d00}",
+            "processId": "7520",
+            "targetFilename": "C:\\\\Users\\\\Public\\\\suspicious.exe",
+            "utcTime": "2025-06-13 17:09:56.385",
+            "creationUtcTime": "2025-06-13 17:09:56.385",
+            "ruleName": "EXE",
+            "user": "DESKTOP-FF0MPJM\\\\conta"
+          },
+          "system": {
+            "eventID": "11",
+            "keywords": "0x8000000000000000",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "level": "4",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "message": "\"File created:\r\nRuleName: EXE\r\nUtcTime: 2025-06-13 17:09:56.385\r\nProcessGuid: {18240644-59e9-684c-1b01-000000000d00}\r\nProcessId: 7520\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetFilename: C:\\Users\\Public\\suspicious.exe\r\nCreationUtcTime: 2025-06-13 17:09:56.385\r\nUser: DESKTOP-FF0MPJM\\conta\"",
+            "opcode": "0",
+            "systemTime": "2025-06-13T17:09:56.3936466Z",
+            "version": "2",
+            "threadID": "4912",
+            "eventRecordID": "6016",
+            "computer": "DESKTOP-FF0MPJM",
+            "task": "11",
+            "severityValue": "INFORMATION",
+            "processID": "3288",
+            "providerName": "Microsoft-Windows-Sysmon"
+          }
+        }
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "rule": {
+        "firedtimes": 1,
+        "mail": true,
+        "level": 12,
+        "groups": [
+          "sysmon",
+          "sysmon_eid11_detections",
+          "windows"
+        ],
+        "description": "Executable file dropped in Users\\Public folder",
+        "mitre": {
+          "technique": [
+            "Ingress Tool Transfer"
+          ],
+          "id": [
+            "T1105"
+          ],
+          "tactic": [
+            "Command and Control"
+          ]
+        },
+        "id": "92207"
+      },
+      "location": "EventChannel",
+      "@index_name": "wazuh-alerts",
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "id": "1749834597.689363",
+      "timestamp": "2025-06-13T17:09:57.305Z"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T17:09:57.305Z"
+      ]
+    },
+    "highlight": {
+      "data.win.system.eventID": [
+        "@opensearch-dashboards-highlighted-field@11@/opensearch-dashboards-highlighted-field@"
+      ],
+      "data.win.eventdata.targetFilename": [
+        "@opensearch-dashboards-highlighted-field@C:\\\\Users\\\\Public\\\\suspicious.exe@/opensearch-dashboards-highlighted-field@"
+      ],
+      "data.win.eventdata.image": [
+        "@opensearch-dashboards-highlighted-field@C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe@/opensearch-dashboards-highlighted-field@"
+      ]
+    },
+    "sort": [
+      1749834597305
+    ]
+  }

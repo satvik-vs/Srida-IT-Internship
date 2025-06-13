@@ -1,0 +1,92 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "edzxapcBSSHwno86OwKY",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "processGuid": "{18240644-876d-684c-9204-000000000d00}",
+            "creationUtcTime": "2025-06-13 20:17:51.433",
+            "user": "DESKTOP-FF0MPJM\\\\conta",
+            "utcTime": "2025-06-13 20:17:51.433",
+            "processId": "8776",
+            "image": "C:\\\\Windows\\\\notepad.exe",
+            "targetFilename": "C:\\\\Windows\\\\Schedule_tasks.ps1"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"File created:\r\nRuleName: -\r\nUtcTime: 2025-06-13 20:17:51.433\r\nProcessGuid: {18240644-876d-684c-9204-000000000d00}\r\nProcessId: 8776\r\nImage: C:\\Windows\\notepad.exe\r\nTargetFilename: C:\\Windows\\Schedule_tasks.ps1\r\nCreationUtcTime: 2025-06-13 20:17:51.433\r\nUser: DESKTOP-FF0MPJM\\conta\"",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "eventID": "11",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Sysmon",
+            "task": "11",
+            "threadID": "4912",
+            "severityValue": "INFORMATION",
+            "keywords": "0x8000000000000000",
+            "processID": "3288",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "eventRecordID": "6752",
+            "systemTime": "2025-06-13T20:17:51.4405962Z",
+            "version": "2",
+            "level": "4"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-13T20:17:53.095Z",
+      "@timestamp": "2025-06-13T20:18:02.694Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1749845873.37674",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1570"
+          ],
+          "tactic": [
+            "Lateral Movement"
+          ],
+          "technique": [
+            "Lateral Tool Transfer"
+          ]
+        },
+        "mail": false,
+        "groups": [
+          "sysmon",
+          "sysmon_eid11_detections",
+          "windows"
+        ],
+        "firedtimes": 19,
+        "id": "92217",
+        "level": 6,
+        "description": "Executable dropped in Windows root folder"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T20:17:53.095Z"
+      ],
+      "@timestamp": [
+        "2025-06-13T20:18:02.694Z"
+      ]
+    }
+  }

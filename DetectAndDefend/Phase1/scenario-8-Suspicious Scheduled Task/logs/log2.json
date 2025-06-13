@@ -1,0 +1,92 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "ftzyapcBSSHwno86TQIK",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "processGuid": "{18240644-87b5-684c-9b04-000000000d00}",
+            "creationUtcTime": "2025-06-13 20:19:02.777",
+            "user": "DESKTOP-FF0MPJM\\\\conta",
+            "utcTime": "2025-06-13 20:19:02.777",
+            "processId": "5532",
+            "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "targetFilename": "C:\\\\Users\\\\conta\\\\AppData\\\\Local\\\\Temp\\\\__PSScriptPolicyTest_pzifcvur.1y0.ps1"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"File created:\r\nRuleName: -\r\nUtcTime: 2025-06-13 20:19:02.777\r\nProcessGuid: {18240644-87b5-684c-9b04-000000000d00}\r\nProcessId: 5532\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetFilename: C:\\Users\\conta\\AppData\\Local\\Temp\\__PSScriptPolicyTest_pzifcvur.1y0.ps1\r\nCreationUtcTime: 2025-06-13 20:19:02.777\r\nUser: DESKTOP-FF0MPJM\\conta\"",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "eventID": "11",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Sysmon",
+            "task": "11",
+            "threadID": "4912",
+            "severityValue": "INFORMATION",
+            "keywords": "0x8000000000000000",
+            "processID": "3288",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "eventRecordID": "6757",
+            "systemTime": "2025-06-13T20:19:02.7852511Z",
+            "version": "2",
+            "level": "4"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-13T20:19:03.752Z",
+      "@timestamp": "2025-06-13T20:19:12.696Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1749845943.47763",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1105"
+          ],
+          "tactic": [
+            "Command and Control"
+          ],
+          "technique": [
+            "Ingress Tool Transfer"
+          ]
+        },
+        "mail": true,
+        "groups": [
+          "sysmon",
+          "sysmon_eid11_detections",
+          "windows"
+        ],
+        "firedtimes": 1,
+        "id": "92213",
+        "level": 15,
+        "description": "Executable file dropped in folder commonly used by malware"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T20:19:03.752Z"
+      ],
+      "@timestamp": [
+        "2025-06-13T20:19:12.696Z"
+      ]
+    }
+  }

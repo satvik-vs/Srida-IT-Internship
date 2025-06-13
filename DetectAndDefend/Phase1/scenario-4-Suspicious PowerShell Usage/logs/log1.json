@@ -1,0 +1,107 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "zdycapcBSSHwno86wgAz",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "parentUser": "DESKTOP-FF0MPJM\\\\conta",
+            "parentProcessId": "7520",
+            "processGuid": "{18240644-71d0-684c-0304-000000000d00}",
+            "utcTime": "2025-06-13 18:45:36.727",
+            "logonId": "0x108566",
+            "parentImage": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "product": "Microsoft® Windows® Operating System",
+            "fileVersion": "10.0.19041.2913 (WinBuild.160101.0800)",
+            "logonGuid": "{18240644-59d1-684c-6685-100000000000}",
+            "terminalSessionId": "1",
+            "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "currentDirectory": "C:\\\\Windows\\\\",
+            "hashes": "MD5=BCF01E61144D6D6325650134823198B8,SHA256=B4E7BC24BF3F5C3DA2EB6E9EC5EC10F90099DEFA91B820F2F3FC70DD9E4785C4,IMPHASH=88CB9A420410BDA787E305B65518A934",
+            "parentProcessGuid": "{18240644-59e9-684c-1b01-000000000d00}",
+            "commandLine": "\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" -enc UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgACIAcwBtAG8AYwBoAC4AZQB4AGUAIgA=",
+            "originalFileName": "PowerShell.EXE",
+            "user": "DESKTOP-FF0MPJM\\\\conta",
+            "integrityLevel": "High",
+            "parentCommandLine": "\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\"",
+            "processId": "2104",
+            "company": "Microsoft Corporation",
+            "description": "Windows PowerShell"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2025-06-13 18:45:36.727\r\nProcessGuid: {18240644-71d0-684c-0304-000000000d00}\r\nProcessId: 2104\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nFileVersion: 10.0.19041.2913 (WinBuild.160101.0800)\r\nDescription: Windows PowerShell\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: PowerShell.EXE\r\nCommandLine: \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -enc UwB0AGEAcgB0AC0AUAByAG8AYwBlAHMAcwAgACIAcwBtAG8AYwBoAC4AZQB4AGUAIgA=\r\nCurrentDirectory: C:\\Windows\\\r\nUser: DESKTOP-FF0MPJM\\conta\r\nLogonGuid: {18240644-59d1-684c-6685-100000000000}\r\nLogonId: 0x108566\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=BCF01E61144D6D6325650134823198B8,SHA256=B4E7BC24BF3F5C3DA2EB6E9EC5EC10F90099DEFA91B820F2F3FC70DD9E4785C4,IMPHASH=88CB9A420410BDA787E305B65518A934\r\nParentProcessGuid: {18240644-59e9-684c-1b01-000000000d00}\r\nParentProcessId: 7520\r\nParentImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nParentCommandLine: \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" \r\nParentUser: DESKTOP-FF0MPJM\\conta\"",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "eventID": "1",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Sysmon",
+            "task": "1",
+            "threadID": "4912",
+            "severityValue": "INFORMATION",
+            "keywords": "0x8000000000000000",
+            "processID": "3288",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "eventRecordID": "6524",
+            "systemTime": "2025-06-13T18:45:36.7539390Z",
+            "version": "5",
+            "level": "4"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-13T18:45:37.891Z",
+      "@timestamp": "2025-06-13T18:45:46.592Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1749840337.82588",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1059.001"
+          ],
+          "tactic": [
+            "Execution"
+          ],
+          "technique": [
+            "PowerShell"
+          ]
+        },
+        "mail": false,
+        "groups": [
+          "sysmon",
+          "sysmon_eid1_detections",
+          "windows"
+        ],
+        "firedtimes": 1,
+        "id": "92027",
+        "level": 4,
+        "description": "Powershell process spawned powershell instance"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T18:45:37.891Z"
+      ],
+      "@timestamp": [
+        "2025-06-13T18:45:46.592Z"
+      ]
+    }
+  }

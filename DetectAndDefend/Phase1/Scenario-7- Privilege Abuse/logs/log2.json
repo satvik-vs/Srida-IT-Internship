@@ -1,0 +1,122 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "xtzPapcBSSHwno86_wGn",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "memberSid": "S-1-5-21-3635981667-1901848597-849423402-1003",
+            "subjectLogonId": "0x108566",
+            "subjectUserSid": "S-1-5-21-3635981667-1901848597-849423402-1001",
+            "targetSid": "S-1-5-32-544",
+            "subjectUserName": "conta",
+            "targetDomainName": "Builtin",
+            "subjectDomainName": "DESKTOP-FF0MPJM",
+            "targetUserName": "Administrators"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"A member was added to a security-enabled local group.\r\n\r\nSubject:\r\n\tSecurity ID:\t\tS-1-5-21-3635981667-1901848597-849423402-1001\r\n\tAccount Name:\t\tconta\r\n\tAccount Domain:\t\tDESKTOP-FF0MPJM\r\n\tLogon ID:\t\t0x108566\r\n\r\nMember:\r\n\tSecurity ID:\t\tS-1-5-21-3635981667-1901848597-849423402-1003\r\n\tAccount Name:\t\t-\r\n\r\nGroup:\r\n\tSecurity ID:\t\tS-1-5-32-544\r\n\tGroup Name:\t\tAdministrators\r\n\tGroup Domain:\t\tBuiltin\r\n\r\nAdditional Information:\r\n\tPrivileges:\t\t-\"",
+            "channel": "Security",
+            "eventID": "4732",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Security-Auditing",
+            "task": "13826",
+            "threadID": "720",
+            "severityValue": "AUDIT_SUCCESS",
+            "keywords": "0x8020000000000000",
+            "processID": "664",
+            "providerGuid": "{54849625-5478-4994-a5ba-3e3b0328c30d}",
+            "eventRecordID": "7446",
+            "systemTime": "2025-06-13T19:41:42.2031707Z",
+            "version": "0",
+            "level": "0"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-13T19:41:43.602Z",
+      "@timestamp": "2025-06-13T19:41:44.658Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1749843703.51739",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1484"
+          ],
+          "tactic": [
+            "Defense Evasion",
+            "Privilege Escalation"
+          ],
+          "technique": [
+            "Domain Policy Modification"
+          ]
+        },
+        "groups": [
+          "windows",
+          "windows_security",
+          "group_changed",
+          "win_group_changed"
+        ],
+        "pci_dss": [
+          "8.1.2",
+          "10.2.5"
+        ],
+        "firedtimes": 1,
+        "tsc": [
+          "CC6.8",
+          "CC7.2",
+          "CC7.3"
+        ],
+        "nist_800_53": [
+          "AC.2",
+          "IA.4",
+          "AU.14",
+          "AC.7"
+        ],
+        "mail": true,
+        "gpg13": [
+          "7.10"
+        ],
+        "id": "60154",
+        "hipaa": [
+          "164.312.a.2.I",
+          "164.312.a.2.II",
+          "164.312.b"
+        ],
+        "gdpr": [
+          "IV_35.7.d",
+          "IV_32.2"
+        ],
+        "level": 12,
+        "description": "Administrators Group Changed"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-13T19:41:43.602Z"
+      ],
+      "@timestamp": [
+        "2025-06-13T19:41:44.658Z"
+      ]
+    }
+  }
