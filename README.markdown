@@ -3,8 +3,6 @@
 ## Overview
 The **DetectAndDefend** internship, provided by **Srida IT**, focuses on developing blue teaming skills through hands-on simulations of cyber attacks, log analysis, and detection using Security Information and Event Management (SIEM) tools. The project is structured into three phases, each comprising multiple scenarios that simulate real-world attack techniques aligned with the MITRE ATT&CK framework. The goal is to enhance skills in threat detection, log collection, and incident reporting using tools like Sysmon, Wazuh, and Windows Event Logs.
 
-This repository, `cyber-intern-phase-1`, documents the work completed for **Phase 1**, with placeholders for **Phase 2** and **Phase 3**, which will follow the same structure. Each phase includes attack simulations, log collection, screenshots, scripts, and detailed summaries, all hosted in a structured directory format.
-
 ## Internship Details
 - **Name**: DetectAndDefend
 - **Organization**: Srida IT
