@@ -38,9 +38,175 @@ The simulations were conducted in a virtualized lab environment to ensure safety
 - **Time Zone**: Indian Standard Time (IST), simulations conducted after-hours (e.g., June 14–15, 2025, ~1-2 AM IST)
 
 ## Directory Structure
-The repository follows a consistent structure across all phases, with each phase containing scenarios, and each scenario including logs, screenshots, scripts, and a main summary file. Below is the structure formatted like the output of the `tree` command.
+The repository follows a consistent structure across all phases, with each phase containing scenarios, and each scenario including logs, screenshots, scripts, and a main summary file.
 
-DetectAndDefend/├── Phase1/│   ├── Scenario-1-BruteForce/│   │   ├── Brute Force Simulation Summary.markdown│   │   ├── Logs/│   │   │   ├── log1.json│   │   │   ├── log2.json│   │   │   ├── log3.json│   │   │   ├── log4.json│   │   │   ├── log5.json│   │   │   └── log6.json│   │   └── Screenshots/│   │       ├── attack-commmand-arch-link-crackmeexec.png│   │       ├── event-logs-1-dashboard.png│   │       └── wazuh-dashboard-event-logs.png│   ├── Scenario-2-MaliciousFileActivity/│   │   ├── Malware Detection Simulation Summary.markdown│   │   ├── pla.txt│   │   ├── logs/│   │   │   └── log.json│   │   └── screenshots/│   │       ├── event-log-1.png│   │       ├── wazuh-dashboard-with-events-deteced.png│   │       └── windows-powershell-execution.png│   ├── scenario-3-Data-Exfiltration/│   │   ├── Updated Data Exfiltration Detection Simulation Summary.markdown│   │   ├── logs/│   │   │   └── log1.json│   │   ├── screenshots/│   │   │   ├── arch-linux-nc-listener-with-script.png│   │   │   ├── sysmon-event-log.png│   │   │   ├── wazuh-dashboard-events-logged.png│   │   │   └── windows-script-execution-with-nc.-and-script.png│   │   └── scripts/│   │       ├── data_exfiltration.ps1│   │       └── netcat.sh│   ├── scenario-4-SuspiciousPowerShellUsage/│   │   ├── Suspicious PowerShell Usage Simulation Summary.markdown│   │   ├── logs/│   │   │   └── log1.json│   │   ├── screenshots/│   │   │   ├── sysmon-detected-log.png│   │   │   ├── wazuh-dashboard-with-log-and-detection-logic.png│   │   │   └── wazuh-log-1.png│   │   └── scripts/│   │       └── suspicious_usage.ps1│   ├── scenario-5-RegistryModification/│   │   ├── Registry Modification Simulation Summary.markdown│   │   ├── Logs/│   │   │   └── log1.json│   │   ├── Screenshots/│   │   │   ├── sysmon-log-windows.png│   │   │   ├── wazuh-dahsboard.png│   │   │   └── windows-powershell.png│   │   └── scripts/│   │       └── registry_mod.ps1│   ├── Scenario-6-Persistence/│   │   ├── Simulate Persistence Simulation Summary.markdown│   │   ├── logs/│   │   │   ├── log1.json│   │   │   └── log2.json│   │   ├── screenshots/│   │   │   ├── sysmon-event-log1.png│   │   │   ├── sysmon-event-log2.png│   │   │   ├── wazuh-dashboard-events.png│   │   │   ├── wazuh-event-log-2.png│   │   │   └── wazuh-log-1-event.png│   │   └── scripts/│   │       └── persistence.ps1│   ├── Scenario-7-PrivilegeAbuse/│   │   ├── Create Local User Simulation Summary.markdown│   │   ├── logs/│   │   │   ├── log1.json│   │   │   ├── log2.json│   │   │   ├── log3.json│   │   │   ├── log4.json│   │   │   └── log5.json│   │   ├── screenshots/│   │   │   ├── sysmon-event-log-1.png│   │   │   ├── sysmon-event-log-2.png│   │   │   ├── sysmon-log-event-3.png│   │   │   ├── sysmon-log-event-4.png│   │   │   ├── wazuh-dashboard-with-events-1.png│   │   │   ├── wazuh-dashboard-with-events-2.png│   │   │   ├── wazuh-event-log01.png│   │   │   ├── wazuh-event-log-03.png│   │   │   ├── wazuh-event-log-04.png│   │   │   └── wazuh-event-log-o2.png│   │   └── scripts/│   │       └── privilege_abuse.ps1│   └── scenario-8-SuspiciousScheduledTask/│       ├── Suspicious Scheduled Task Simulation Summary.markdown│       ├── logs/│       │   ├── log1.json│       │   └── log2.json│       ├── Screenshots/│       │   ├── sysmon-event-log-1.png│       │   ├── sysmon-event-log-2.png│       │   ├── sysmon-event-log-3.png│       │   ├── sysmon-repeat-tasks-logged.png│       │   ├── wazuh-dashboard-events.png│       │   ├── wazuh-detailed-log1.png│       │   └── wazuh-detailed-log2.png│       └── Scripts/│           └── scheduled_tasks.ps1├── Phase2/│   ├── Scenario-1-Beaconing/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   ├── Screenshots/│   │   └── Scripts/│   ├── Scenario-2-SuspiciousZipFile/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   ├── Screenshots/│   │   └── Scripts/│   ├── Scenario-3-MaliciousScriptExecution/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   ├── Screenshots/│   │   └── Scripts/│   ├── Scenario-4-PrivilegeEscalation/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   ├── Screenshots/│   │   └── Scripts/│   ├── Scenario-6-LateralMovement/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   │   ├── sysmon_events_psexec.evtx│   │   │   ├── security_events_psexec.evtx│   │   │   └── wazuh_agent_filtered_psexec.log│   │   ├── Screenshots/│   │   │   ├── attack-command-arch.png│   │   │   ├── wazuh-dashboard-event-logs.png│   │   │   ├── event-logs-psexec.png│   │   │   └── psexec_output.png│   │   ├── attack_script.sh│   │   ├── sysmonconfig-export.xml│   │   └── ossec.conf│   ├── Scenario-7-DataExfiltration/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   │   ├── sysmon_events_exfil.evtx│   │   │   ├── security_events_exfil.evtx│   │   │   └── wazuh_agent_filtered_exfil.log│   │   ├── Screenshots/│   │   │   ├── attack-command-arch.png│   │   │   ├── wazuh-dashboard-event-logs.png│   │   │   ├── event-logs-exfil.png│   │   │   └── smbclient_output.png│   │   ├── attack_script.sh│   │   ├── sysmonconfig-export.xml│   │   └── ossec.conf│   └── Scenario-8-Persistence/│       ├── Summary.markdown│       ├── Logs/│       │   ├── sysmon_events_persist.evtx│       │   ├── security_events_persist.evtx│       │   └── wazuh_agent_filtered_persist.log│       ├── Screenshots/│       │   ├── attack-command-arch.png│       │   ├── wazuh-dashboard-event-logs.png│       │   ├── event-logs-persist.png│       │   └── task_output.png│       ├── attack_script.sh│       ├── sysmonconfig-export.xml│       └── ossec.conf├── Phase3/│   ├── Scenario-1-IncidentResponse/│   │   ├── Summary.markdown│   │   ├── Logs/│   │   ├── Screenshots/│   │   └── Scripts/│   └── Scenario-2-ForensicAnalysis/│       ├── Summary.markdown│       ├── Logs/│       ├── Screenshots/│       └── Scripts/└── README.md
+├── DetectAndDefend
+│   ├── Phase1
+│   │   ├── Scenario-1-BruteForce
+│   │   │   ├── Brute Force Simulation Summary.markdown
+│   │   │   ├── Logs
+│   │   │   │   ├── log1.json
+│   │   │   │   ├── log2.json
+│   │   │   │   ├── log3.json
+│   │   │   │   ├── log4.json
+│   │   │   │   ├── log5.json
+│   │   │   │   └── log6.json
+│   │   │   └── Screenshots
+│   │   │       ├── attack-commmand-arch-link-crackmeexec.png
+│   │   │       ├── event-logs-1-dashboard.png
+│   │   │       └── wazuh-dashboard-event-logs.png
+│   │   ├── Scenario-2-Malicious File Activity
+│   │   │   ├── logs
+│   │   │   │   └── log.json
+│   │   │   ├── Malware Detection Simulation Summary.markdown
+│   │   │   └── screenshots
+│   │   │       ├── event-log-1.png
+│   │   │       ├── wazuh-dashboard-with-events-deteced.png
+│   │   │       └── windows-powershell-execution.png
+│   │   ├── scenario-3-Data-Exfiltration
+│   │   │   ├── logs
+│   │   │   │   └── log1.json
+│   │   │   ├── screenshots
+│   │   │   │   ├── arch-linux-nc-listener-with-script.png
+│   │   │   │   ├── sysmon-event-log.png
+│   │   │   │   ├── wazuh-dashboard-events-logged.png
+│   │   │   │   └── windows-script-execution-with-nc.-and-script.png
+│   │   │   ├── scripts
+│   │   │   │   ├── data_exfiltration.ps1
+│   │   │   │   └── netcat.sh
+│   │   │   └── Updated Data Exfiltration Detection Simulation Summary.markdown
+│   │   ├── scenario-4-Suspicious PowerShell Usage
+│   │   │   ├── logs
+│   │   │   │   └── log1.json
+│   │   │   ├── screenshots
+│   │   │   │   ├── sysmon-detected-log.png
+│   │   │   │   ├── wazuh-dashboard-with-log-and-detection-logic.png
+│   │   │   │   └── wazuh-log-1.png
+│   │   │   ├── scripts
+│   │   │   │   └── suspicious_usage.ps1
+│   │   │   └── Suspicious PowerShell Usage Simulation Summary.markdown
+│   │   ├── scenario-5-Registry Modification
+│   │   │   ├── Logs
+│   │   │   │   └── log1.json
+│   │   │   ├── Registry Modification Simulation Summary.markdown
+│   │   │   ├── Screenshots
+│   │   │   │   ├── sysmon-log-windows.png
+│   │   │   │   ├── wazuh-dahsboard.png
+│   │   │   │   └── windows-powershell.png
+│   │   │   └── scripts
+│   │   │       └── registry_mod.ps1
+│   │   ├── Scenario-6-Persistence
+│   │   │   ├── logs
+│   │   │   │   ├── log1.json
+│   │   │   │   └── log2.json
+│   │   │   ├── screenshots
+│   │   │   │   ├── sysmon-event-log1.png
+│   │   │   │   ├── sysmon-event-log2.png
+│   │   │   │   ├── wazuh-dashboard-events.png
+│   │   │   │   ├── wazuh-event-log-2.png
+│   │   │   │   └── wazuh-log-1-event.png
+│   │   │   ├── scripts
+│   │   │   │   └── persistence.ps1
+│   │   │   └── Simulate Persistence Simulation Summary.markdown
+│   │   ├── Scenario-7- Privilege Abuse
+│   │   │   ├── Create Local User Simulation Summary.markdown
+│   │   │   ├── logs
+│   │   │   │   ├── log1.json
+│   │   │   │   ├── log2.json
+│   │   │   │   ├── log3.json
+│   │   │   │   ├── log4.json
+│   │   │   │   └── log5.json
+│   │   │   ├── screenshots
+│   │   │   │   ├── sysmon-event-log-1.png
+│   │   │   │   ├── sysmon-event-log-2.png
+│   │   │   │   ├── sysmon-log-event-3.png
+│   │   │   │   ├── sysmon-log-event-4.png
+│   │   │   │   ├── wazuh-dashboard-with-events-1.png
+│   │   │   │   ├── wazuh-dashboard-with-events-2.png
+│   │   │   │   ├── wazuh-event-log01.png
+│   │   │   │   ├── wazuh-event-log-03.png
+│   │   │   │   ├── wazuh-event-log-04.png
+│   │   │   │   └── wazuh-event-log-o2.png
+│   │   │   └── scripts
+│   │   │       └── privilege_abuse.ps1
+│   │   └── scenario-8-Suspicious Scheduled Task
+│   │       ├── logs
+│   │       │   ├── log1.json
+│   │       │   └── log2.json
+│   │       ├── Screenshots
+│   │       │   ├── sysmon-event-log-1.png
+│   │       │   ├── sysmon-event-log-2.png
+│   │       │   ├── sysmon-event-log-3.png
+│   │       │   ├── sysmon-repeat-tasks-logged.png
+│   │       │   ├── wazuh-dashboard-events.png
+│   │       │   ├── wazuh-detailed-log1.png
+│   │       │   └── wazuh-detailed-log2.png
+│   │       ├── Scripts
+│   │       │   └── scheduled_tasks.ps1
+│   │       └── Suspicious Scheduled Task Simulation Summary.markdown
+│   └── phase2
+│       ├── External Beaconing
+│       │   ├── logs
+│       │   │   └── log1.json
+│       │   ├── screenshots
+│       │   │   ├── Beacon-Host.png
+│       │   │   ├── powershell-executuion.png
+│       │   │   ├── wazuh-dashboard-logs.png
+│       │   │   └── wazuh-log-deatiled.png
+│       │   └── Summary (1).markdown
+│       ├── Scenario-1-Suspicious Zip File 
+│       │   ├── logs
+│       │   │   └── log1.json
+│       │   ├── Screenshots
+│       │   │   ├── Arch-Linux-Attacker-MSF-Console.png
+│       │   │   ├── ubuntu-downloads-folder.png
+│       │   │   ├── wazuh-dashboard-with-events-logged.png
+│       │   │   └── wazuh-log-1.png
+│       │   └── Summary.markdown
+│       ├── Scenario-2-Malicious-Script-Execution
+│       │   ├── logs
+│       │   │   └── log1.json
+│       │   ├── screenshots
+│       │   │   ├── wazuh-dashboard-logs.png
+│       │   │   ├── wazuh-detailed-log.png
+│       │   │   └── windows-script-execution.png
+│       │   ├── Scripts
+│       │   │   └── beacon2.ps1
+│       │   └── Summary.markdown
+│       ├── Scenario-4-PrivilgeEscalation
+│       │   ├── Logs
+│       │   │   ├── log1.json
+│       │   │   ├── log2.json
+│       │   │   ├── log3.json
+│       │   │   ├── log4.json
+│       │   │   └── log5.json
+│       │   ├── Privilege-Escalation-Summary.markdown
+│       │   └── Screenshots
+│       │       ├── log1.png
+│       │       ├── log2.png
+│       │       ├── log3.png
+│       │       ├── powershell.png
+│       │       ├── wazuh-dashboard.png
+│       │       └── wazuh-db-logs.png
+│       ├── Scenario-5-Lateral Movement
+│       │   ├── Logs
+│       │   │   └── log1.json
+│       │   └── Screenshots
+│       │       ├── attacker-console.png
+│       │       ├── Deatiled-log.png
+│       │       ├── detailed-log.png
+│       │       └── wazuh-detected-log.png
+│       └── Scenario-6-Data-Exfiltartion
+│           ├── data-exfiltration-summary.markdown
+│           ├── Logs
+│           │   ├── log-1.json
+│           │   └── log-2.json
+│           └── Screenshots
+│               ├── attacker-console.png
+│               ├── wazuh-dashboard-logs.png
+│               ├── wazuh-log-1.png
+│               └── wazuh-log-2.png
+└── README.markdown
 
 ## Phase-wise Tasks
 The internship is divided into three phases, each focusing on specific attack scenarios and detection techniques. Below is a summary of tasks completed in **Phase 1** and **Phase 2**, with plans for **Phase 3**.
