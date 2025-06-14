@@ -1,0 +1,95 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "Jtxub5cBSSHwno86bBzA",
+    "_score": 1,
+    "_source": {
+      "agent": {
+        "id": "004",
+        "name": "ubuntu-2024.04.2",
+        "ip": "192.168.1.2"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-14T17:13:12.939Z",
+      "syscheck": {
+        "event": "added",
+        "size_after": "196",
+        "uname_after": "ubuntu-SIEM",
+        "inode_after": 524727,
+        "perm_after": "rw-rw-r--",
+        "mode": "realtime",
+        "mtime_after": "2025-06-14T17:13:10",
+        "path": "/tmp/suspicious23.zip",
+        "uid_after": "1000",
+        "md5_after": "9c0a3b82b41eefebcd7247ad14a138a2",
+        "gid_after": "1000",
+        "gname_after": "ubuntu-SIEM",
+        "sha256_after": "8454624f41990b1974270acfa23ecefc4a3c8eb94956053bf140e6dcb6d8df48",
+        "sha1_after": "36758178ffb24101cea9d864b1cc3768a627854b"
+      },
+      "@timestamp": "2025-06-14T17:13:16.142Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "syscheck_new_entry"
+      },
+      "full_log": "File '/tmp/suspicious23.zip' added\nMode: realtime\n",
+      "location": "syscheck",
+      "id": "1749921192.0",
+      "rule": {
+        "groups": [
+          "ossec",
+          "syscheck",
+          "syscheck_entry_added",
+          "syscheck_file"
+        ],
+        "pci_dss": [
+          "11.5"
+        ],
+        "firedtimes": 4,
+        "tsc": [
+          "PI1.4",
+          "PI1.5",
+          "CC6.1",
+          "CC6.8",
+          "CC7.2",
+          "CC7.3"
+        ],
+        "nist_800_53": [
+          "SI.7"
+        ],
+        "mail": false,
+        "gpg13": [
+          "4.11"
+        ],
+        "id": "554",
+        "hipaa": [
+          "164.312.c.1",
+          "164.312.c.2"
+        ],
+        "gdpr": [
+          "II_5.1.f"
+        ],
+        "level": 5,
+        "description": "File added to the system."
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "syscheck.mtime_after": [
+        "2025-06-14T17:13:10.000Z"
+      ],
+      "timestamp": [
+        "2025-06-14T17:13:12.939Z"
+      ],
+      "@timestamp": [
+        "2025-06-14T17:13:16.142Z"
+      ]
+    }
+  }

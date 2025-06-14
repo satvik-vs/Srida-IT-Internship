@@ -1,0 +1,110 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "wdyxb5cBSSHwno86OB7t",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "parentUser": "DESKTOP-FF0MPJM\\\\conta",
+            "parentProcessId": "7404",
+            "processGuid": "{18240644-bebc-684d-5e03-000000000e00}",
+            "utcTime": "2025-06-14 18:26:04.679",
+            "logonId": "0x3d7fe",
+            "parentImage": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "product": "Microsoft® Windows® Operating System",
+            "fileVersion": "10.0.19041.1 (WinBuild.160101.0800)",
+            "logonGuid": "{18240644-b887-684d-fed7-030000000000}",
+            "terminalSessionId": "1",
+            "image": "C:\\\\Windows\\\\System32\\\\net.exe",
+            "currentDirectory": "C:\\\\temp\\\\",
+            "hashes": "MD5=0BD94A338EEA5A4E1F2830AE326E6D19,SHA256=9F376759BCBCD705F726460FC4A7E2B07F310F52BAA73CAAAAA124FDDBDF993E,IMPHASH=57F0C47AE2A1A2C06C8B987372AB0B07",
+            "parentProcessGuid": "{18240644-bebc-684d-5d03-000000000e00}",
+            "commandLine": "\\\"C:\\\\Windows\\\\system32\\\\net.exe\\\" user",
+            "originalFileName": "net.exe",
+            "user": "DESKTOP-FF0MPJM\\\\conta",
+            "integrityLevel": "High",
+            "parentCommandLine": "\\\"C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe\\\" -ExecutionPolicy Bypass -File C:\\\\Temp\\\\malicious.ps1",
+            "processId": "1960",
+            "company": "Microsoft Corporation",
+            "description": "Net Command"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"Process Create:\r\nRuleName: -\r\nUtcTime: 2025-06-14 18:26:04.679\r\nProcessGuid: {18240644-bebc-684d-5e03-000000000e00}\r\nProcessId: 1960\r\nImage: C:\\Windows\\System32\\net.exe\r\nFileVersion: 10.0.19041.1 (WinBuild.160101.0800)\r\nDescription: Net Command\r\nProduct: Microsoft® Windows® Operating System\r\nCompany: Microsoft Corporation\r\nOriginalFileName: net.exe\r\nCommandLine: \"C:\\Windows\\system32\\net.exe\" user\r\nCurrentDirectory: C:\\temp\\\r\nUser: DESKTOP-FF0MPJM\\conta\r\nLogonGuid: {18240644-b887-684d-fed7-030000000000}\r\nLogonId: 0x3D7FE\r\nTerminalSessionId: 1\r\nIntegrityLevel: High\r\nHashes: MD5=0BD94A338EEA5A4E1F2830AE326E6D19,SHA256=9F376759BCBCD705F726460FC4A7E2B07F310F52BAA73CAAAAA124FDDBDF993E,IMPHASH=57F0C47AE2A1A2C06C8B987372AB0B07\r\nParentProcessGuid: {18240644-bebc-684d-5d03-000000000e00}\r\nParentProcessId: 7404\r\nParentImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nParentCommandLine: \"C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\" -ExecutionPolicy Bypass -File C:\\Temp\\malicious.ps1\r\nParentUser: DESKTOP-FF0MPJM\\conta\"",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "eventID": "1",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Sysmon",
+            "task": "1",
+            "threadID": "5788",
+            "severityValue": "INFORMATION",
+            "keywords": "0x8000000000000000",
+            "processID": "3244",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "eventRecordID": "8914",
+            "systemTime": "2025-06-14T18:26:04.6813703Z",
+            "version": "5",
+            "level": "4"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-14T18:26:05.307Z",
+      "@timestamp": "2025-06-14T18:26:12.240Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1749925565.298435",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1087",
+            "T1059.001"
+          ],
+          "tactic": [
+            "Discovery",
+            "Execution"
+          ],
+          "technique": [
+            "Account Discovery",
+            "PowerShell"
+          ]
+        },
+        "mail": false,
+        "groups": [
+          "sysmon",
+          "sysmon_eid1_detections",
+          "windows"
+        ],
+        "firedtimes": 1,
+        "id": "92033",
+        "level": 3,
+        "description": "Discovery activity spawned via powershell execution"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-14T18:26:05.307Z"
+      ],
+      "@timestamp": [
+        "2025-06-14T18:26:12.240Z"
+      ]
+    }
+  }
