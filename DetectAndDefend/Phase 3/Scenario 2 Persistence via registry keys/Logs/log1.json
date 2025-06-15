@@ -1,0 +1,92 @@
+{
+    "_index": "wazuh-alerts-4.x-v1-2025.06.12-000001",
+    "_id": "7dy6dJcBSSHwno86OV5M",
+    "_score": 1,
+    "_source": {
+      "data": {
+        "win": {
+          "eventdata": {
+            "processGuid": "{18240644-079c-684f-0005-000000001100}",
+            "creationUtcTime": "2025-06-15 17:54:06.901",
+            "user": "DESKTOP-FF0MPJM\\\\attacker",
+            "utcTime": "2025-06-15 17:54:06.901",
+            "processId": "12284",
+            "image": "C:\\\\Windows\\\\System32\\\\WindowsPowerShell\\\\v1.0\\\\powershell.exe",
+            "targetFilename": "C:\\\\temp\\\\malicious.bat"
+          },
+          "system": {
+            "computer": "DESKTOP-FF0MPJM",
+            "message": "\"File created:\r\nRuleName: -\r\nUtcTime: 2025-06-15 17:54:06.901\r\nProcessGuid: {18240644-079c-684f-0005-000000001100}\r\nProcessId: 12284\r\nImage: C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe\r\nTargetFilename: C:\\temp\\malicious.bat\r\nCreationUtcTime: 2025-06-15 17:54:06.901\r\nUser: DESKTOP-FF0MPJM\\attacker\"",
+            "channel": "Microsoft-Windows-Sysmon/Operational",
+            "eventID": "11",
+            "opcode": "0",
+            "providerName": "Microsoft-Windows-Sysmon",
+            "task": "11",
+            "threadID": "4104",
+            "severityValue": "INFORMATION",
+            "keywords": "0x8000000000000000",
+            "processID": "3204",
+            "providerGuid": "{5770385f-c22a-43e0-bf4c-06f5698ffbd9}",
+            "eventRecordID": "14343",
+            "systemTime": "2025-06-15T17:54:06.9029380Z",
+            "version": "2",
+            "level": "4"
+          }
+        }
+      },
+      "agent": {
+        "id": "002",
+        "name": "SIEM-Target-Windows",
+        "ip": "192.168.1.101"
+      },
+      "input": {
+        "type": "log"
+      },
+      "timestamp": "2025-06-15T17:54:07.935Z",
+      "@timestamp": "2025-06-15T17:54:09.789Z",
+      "cluster": {
+        "name": "59ua5pzn9gtc",
+        "node": "wazuh-manager-master-0"
+      },
+      "manager": {
+        "name": "wazuh-manager-master-0"
+      },
+      "decoder": {
+        "name": "windows_eventchannel"
+      },
+      "location": "EventChannel",
+      "id": "1750010047.252997",
+      "rule": {
+        "mitre": {
+          "id": [
+            "T1105"
+          ],
+          "tactic": [
+            "Command and Control"
+          ],
+          "technique": [
+            "Ingress Tool Transfer"
+          ]
+        },
+        "mail": false,
+        "groups": [
+          "sysmon",
+          "sysmon_eid11_detections",
+          "windows"
+        ],
+        "firedtimes": 1,
+        "id": "92203",
+        "level": 6,
+        "description": "Executable file created by powershell: C:\\\\temp\\\\malicious.bat"
+      },
+      "@index_name": "wazuh-alerts"
+    },
+    "fields": {
+      "timestamp": [
+        "2025-06-15T17:54:07.935Z"
+      ],
+      "@timestamp": [
+        "2025-06-15T17:54:09.789Z"
+      ]
+    }
+  }
